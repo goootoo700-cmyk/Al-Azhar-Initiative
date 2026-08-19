@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الطالب | مبادرة معًا نتعلم الأزهرية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="dashboard-nav">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span>معًا نتعلم الأزهرية</span>
+            </div>
+            <div class="dashboard-actions">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-danger" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    تسجيل الخروج
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <div class="welcome-card glass-card">
+                <div class="student-avatar" id="studentAvatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="student-info">
+                    <h2 id="welcomeMessage">مرحبًا، </h2>
+                    <div class="student-details">
+                        <span class="badge" id="studentCodeBadge">
+                            <i class="fas fa-id-card"></i>
+                            الكود: 
+                        </span>
+                        <span class="badge" id="gradeBadge">
+                            <i class="fas fa-graduation-cap"></i>
+                            الصف: 
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-grid">
+            <!-- Competitions Card -->
+            <div class="dashboard-card" onclick="showCompetitions()">
+                <div class="card-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>المسابقات</h3>
+                <p>المسابقات المتاحة لك</p>
+                <span class="card-arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+            </div>
+
+            <!-- Exams Card -->
+            <div class="dashboard-card" onclick="showExams()">
+                <div class="card-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>الامتحانات</h3>
+                <p>الامتحانات المتاحة لك</p>
+                <span class="card-arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+            </div>
+
+            <!-- Account Data Card -->
+            <div class="dashboard-card" onclick="showAccountData()">
+                <div class="card-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>بيانات الحساب</h3>
+                <p>عرض وتعديل بياناتك</p>
+                <span class="card-arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="competitionsSection" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>🏆 المسابقات المتاحة لك</h2>
+                <p>المسابقات المتاحة لصفك الدراسي</p>
+            </div>
+            <div id="competitionsList" class="items-list">
+                <!-- Competitions will be displayed here -->
+            </div>
+        </div>
+
+        <div id="examsSection" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>📝 الامتحانات المتاحة لك</h2>
+                <p>الامتحانات المتاحة لصفك الدراسي</p>
+            </div>
+            <div id="examsList" class="items-list">
+                <!-- Exams will be displayed here -->
+            </div>
+        </div>
+
+        <div id="accountSection" class="content-section" style="display: none;">
+            <div class="section-header">
+                <h2>👤 بيانات الحساب</h2>
+                <p>معلوماتك الشخصية</p>
+            </div>
+            <div class="account-details glass-card">
+                <div class="account-info" id="accountInfo">
+                    <!-- Account data will be displayed here -->
+                </div>
+                <button class="btn btn-primary" onclick="editAccount()">
+                    <i class="fas fa-edit"></i>
+                    تعديل البيانات
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Account Modal -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>تعديل البيانات</h3>
+                <button class="close-btn" onclick="closeEditModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editForm" class="auth-form">
+                <div class="form-group">
+                    <label for="editPhone">
+                        <i class="fas fa-phone"></i>
+                        رقم الهاتف
+                    </label>
+                    <input type="tel" id="editPhone" name="phone" required
+                           placeholder="01xxxxxxxxx" pattern="[0-9]{11}">
+                </div>
+                <div class="form-group">
+                    <label for="editInstitute">
+                        <i class="fas fa-school"></i>
+                        اسم المعهد
+                    </label>
+                    <input type="text" id="editInstitute" name="institute" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-save"></i>
+                    حفظ التعديلات
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

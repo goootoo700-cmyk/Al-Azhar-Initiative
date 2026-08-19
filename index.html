@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مبادرة معًا نتعلم الأزهرية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <span>معًا نتعلم الأزهرية</span>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="location.href='login.html'">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </button>
+                <button class="btn btn-primary" onclick="location.href='register.html'">
+                    <i class="fas fa-user-plus"></i>
+                    تسجيل طالب جديد
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">مرحبًا بكم في مبادرة</h1>
+            <h2 class="hero-subtitle">معًا نتعلم الأزهرية</h2>
+            <p class="hero-description">
+                منصة تعليمية أزهرية شاملة تهدف إلى تطوير مهارات الطلاب
+                ودعمهم في رحلتهم التعليمية من خلال المسابقات والامتحانات التفاعلية
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-lg" onclick="location.href='register.html'">
+                    <i class="fas fa-graduation-cap"></i>
+                    ابدأ رحلتك التعليمية
+                </button>
+                <button class="btn btn-outline btn-lg" onclick="location.href='login.html'">
+                    <i class="fas fa-key"></i>
+                    لديك حساب بالفعل؟
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Al-Azhar_al-Sharif_logo.png" alt="الأزهر الشريف">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2>لماذا منصتنا؟</h2>
+            <p>مميزات تجعل تجربتك التعليمية فريدة</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <h3>كود طالب فريد</h3>
+                <p>كل طالب يحصل على كود خاص وفريد يستخدمه للدخول إلى المنصة والمشاركة في المسابقات</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>مسابقات تفاعلية</h3>
+                <p>مسابقات مخصصة لكل صف دراسي تساعدك على تحسين مستواك التعليمي</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>تتبع التقدم</h3>
+                <p>تابع تقدمك ونتائجك في المسابقات والامتحانات بشكل مستمر</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Grades Section -->
+    <section class="grades-section">
+        <div class="section-header">
+            <h2>الصفوف الدراسية المتاحة</h2>
+            <p>اختر الصف المناسب لك وابدأ رحلتك التعليمية</p>
+        </div>
+        <div class="grades-grid">
+            <div class="grade-card">
+                <div class="grade-icon">📚</div>
+                <h3>الصف الأول الثانوي</h3>
+                <p>الأزهري</p>
+                <button class="btn btn-primary" onclick="location.href='register.html'">
+                    سجل الآن
+                </button>
+            </div>
+            <div class="grade-card">
+                <div class="grade-icon">📖</div>
+                <h3>الصف الثاني الثانوي</h3>
+                <p>الأزهري</p>
+                <button class="btn btn-primary" onclick="location.href='register.html'">
+                    سجل الآن
+                </button>
+            </div>
+            <div class="grade-card">
+                <div class="grade-icon">🎓</div>
+                <h3>الصف الثالث الثانوي</h3>
+                <p>الأزهري</p>
+                <button class="btn btn-primary" onclick="location.href='register.html'">
+                    سجل الآن
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="section-header">
+            <h2>كيف تعمل المنصة؟</h2>
+            <p>خطوات بسيطة للبدء في رحلتك التعليمية</p>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>سجل حسابك</h3>
+                <p>قم بإنشاء حساب جديد بمعلوماتك الشخصية</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>احصل على كودك</h3>
+                <p>ستحصل على كود طالب فريد خاص بك</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>ابدأ التعلم</h3>
+                <p>ادخل إلى المنصة وشارك في المسابقات والامتحانات</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>مبادرة معًا نتعلم الأزهرية</h3>
+                <p>منصة تعليمية تهدف إلى دعم طلاب الأزهر الشريف</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="register.html">التسجيل</a></li>
+                    <li><a href="login.html">تسجيل الدخول</a></li>
+                </ul>
+            </div>
+            
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2026 مبادرة معًا نتعلم الأزهرية</p>
+        </div>
+    </footer>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

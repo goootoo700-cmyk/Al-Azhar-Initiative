@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل طالب جديد | مبادرة معًا نتعلم الأزهرية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card glass-card">
+            <div class="auth-header">
+                <button class="back-btn" onclick="location.href='index.html'">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <h2>تسجيل طالب جديد</h2>
+                <p>قم بإنشاء حسابك للانضمام إلى المبادرة</p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="fullName">
+                        <i class="fas fa-user"></i>
+                        الاسم بالكامل
+                    </label>
+                    <input type="text" id="fullName" name="fullName" required
+                           placeholder="أدخل اسمك بالكامل">
+                    <span class="error-message" id="fullNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i>
+                        رقم الهاتف
+                    </label>
+                    <input type="tel" id="phone" name="phone" required
+                           placeholder="01xxxxxxxxx" pattern="[0-9]{11}">
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="governorate">
+                            <i class="fas fa-map-marker-alt"></i>
+                            المحافظة
+                        </label>
+                        <select id="governorate" name="governorate" required>
+                            <option value="">اختر المحافظة</option>
+                            <option value="القاهرة">القاهرة</option>
+                            <option value="الجيزة">الجيزة</option>
+                            <option value="الإسكندرية">الإسكندرية</option>
+                            <option value="الدقهلية">الدقهلية</option>
+                            <option value="الشرقية">الشرقية</option>
+                            <option value="الغربية">الغربية</option>
+                            <option value="المنوفية">المنوفية</option>
+                            <option value="القليوبية">القليوبية</option>
+                            <option value="البحيرة">البحيرة</option>
+                            <option value="كفر الشيخ">كفر الشيخ</option>
+                            <option value="دمياط">دمياط</option>
+                            <option value="بورسعيد">بورسعيد</option>
+                            <option value="الإسماعيلية">الإسماعيلية</option>
+                            <option value="السويس">السويس</option>
+                            <option value="شمال سيناء">شمال سيناء</option>
+                            <option value="جنوب سيناء">جنوب سيناء</option>
+                            <option value="بني سويف">بني سويف</option>
+                            <option value="الفيوم">الفيوم</option>
+                            <option value="المنيا">المنيا</option>
+                            <option value="أسيوط">أسيوط</option>
+                            <option value="سوهاج">سوهاج</option>
+                            <option value="قنا">قنا</option>
+                            <option value="الأقصر">الأقصر</option>
+                            <option value="أسوان">أسوان</option>
+                            <option value="البحر الأحمر">البحر الأحمر</option>
+                            <option value="الوادي الجديد">الوادي الجديد</option>
+                            <option value="مطروح">مطروح</option>
+                        </select>
+                        <span class="error-message" id="governorateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="azharRegion">
+                            <i class="fas fa-building"></i>
+                            المنطقة الأزهرية
+                        </label>
+                        <input type="text" id="azharRegion" name="azharRegion" required
+                               placeholder="مثال: منطقة الشرقية الأزهرية">
+                        <span class="error-message" id="azharRegionError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="institute">
+                        <i class="fas fa-school"></i>
+                        اسم المعهد
+                    </label>
+                    <input type="text" id="institute" name="institute" required
+                           placeholder="مثال: معهد الزقازيق الثانوي">
+                    <span class="error-message" id="instituteError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="grade">
+                        <i class="fas fa-graduation-cap"></i>
+                        الصف الدراسي
+                    </label>
+                    <select id="grade" name="grade" required>
+                        <option value="">اختر الصف الدراسي</option>
+                        <option value="first_secondary">الصف الأول الثانوي الأزهري</option>
+                        <option value="second_secondary">الصف الثاني الثانوي الأزهري</option>
+                        <option value="third_secondary">الصف الثالث الثانوي الأزهري</option>
+                    </select>
+                    <span class="error-message" id="gradeError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            كلمة المرور
+                        </label>
+                        <input type="password" id="password" name="password" required
+                               placeholder="أدخل كلمة المرور" minlength="6">
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">
+                            <i class="fas fa-check-circle"></i>
+                            تأكيد كلمة المرور
+                        </label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required
+                               placeholder="أعد إدخال كلمة المرور" minlength="6">
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="registerBtn">
+                    <i class="fas fa-user-plus"></i>
+                    إنشاء الحساب
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
