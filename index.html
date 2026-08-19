@@ -48,7 +48,6 @@
             --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        /* ============ Reset & Base ============ */
         * {
             margin: 0;
             padding: 0;
@@ -76,18 +75,16 @@
             font-family: inherit;
         }
 
-        input, select {
+        input, select, textarea {
             font-family: inherit;
         }
 
-        /* ============ Header ============ */
         .header {
             background: var(--bg-secondary);
             box-shadow: var(--shadow-md);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background var(--transition-medium);
         }
 
         .nav-container {
@@ -118,9 +115,9 @@
             display: flex;
             gap: 1rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        /* ============ Buttons ============ */
         .btn {
             padding: 0.75rem 1.5rem;
             border-radius: var(--radius-md);
@@ -203,7 +200,6 @@
             color: white;
         }
 
-        /* ============ Hero Section ============ */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
@@ -253,7 +249,6 @@
             font-size: 8rem;
         }
 
-        /* ============ Section Headers ============ */
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -270,11 +265,9 @@
             color: var(--text-secondary);
         }
 
-        /* ============ Features Section ============ */
         .features {
             padding: 4rem 2rem;
             background: var(--bg-secondary);
-            transition: background var(--transition-medium);
         }
 
         .features-grid {
@@ -291,7 +284,6 @@
             background: var(--bg-primary);
             text-align: center;
             transition: all var(--transition-medium);
-            animation: fadeInUp 0.6s ease;
         }
 
         .feature-card:hover {
@@ -316,7 +308,6 @@
             line-height: 1.8;
         }
 
-        /* ============ Grades Section ============ */
         .grades-section {
             padding: 4rem 2rem;
         }
@@ -336,7 +327,6 @@
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: all var(--transition-medium);
-            animation: fadeInUp 0.6s ease;
         }
 
         .grade-card:hover {
@@ -362,7 +352,6 @@
             font-size: 1.125rem;
         }
 
-        /* ============ Auth Pages ============ */
         .auth-page {
             min-height: 100vh;
             display: flex;
@@ -440,7 +429,6 @@
             cursor: pointer;
         }
 
-        /* ============ Form Styles ============ */
         .form-group {
             position: relative;
         }
@@ -458,7 +446,8 @@
         }
 
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.875rem 1rem;
             border: 2px solid #e0e0e0;
@@ -469,30 +458,23 @@
             color: var(--text-primary);
         }
 
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
         .form-group input:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             border-color: var(--primary-color);
             outline: none;
             box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
-        }
-
-        .error-message {
-            display: block;
-            color: var(--error);
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            min-height: 1rem;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-        }
-
-        /* ============ Dashboard Styles ============ */
-        .dashboard-body {
-            background: var(--bg-primary);
         }
 
         .dashboard-container {
@@ -596,52 +578,6 @@
             color: var(--text-light);
         }
 
-        .content-section {
-            animation: fadeIn 0.6s ease;
-            margin-top: 2rem;
-        }
-
-        .items-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .item-card {
-            padding: 1.5rem;
-            background: var(--bg-secondary);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-fast);
-        }
-
-        .item-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .item-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .item-card p {
-            color: var(--text-secondary);
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-light);
-        }
-
-        .empty-state i {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
         .account-details {
             padding: 2rem;
             border-radius: var(--radius-lg);
@@ -655,6 +591,7 @@
             align-items: center;
             padding: 0.75rem 0;
             border-bottom: 1px solid var(--text-light);
+            flex-wrap: wrap;
         }
 
         .account-field:last-child {
@@ -670,7 +607,162 @@
             color: var(--text-primary);
         }
 
-        /* ============ Success Page ============ */
+        .exam-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .exam-header {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .exam-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .exam-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .exam-info-item {
+            text-align: center;
+        }
+
+        .exam-info-item label {
+            display: block;
+            font-weight: bold;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .exam-info-item span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .question-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question-number {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .answer-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            resize: vertical;
+            transition: all var(--transition-fast);
+        }
+
+        .answer-textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
+        }
+
+        .exam-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: var(--bg-accent);
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        .timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--error);
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .results-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .result-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .result-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+
+        .result-score {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
         .success-page {
             min-height: 100vh;
             display: flex;
@@ -739,6 +831,7 @@
             justify-content: space-between;
             padding: 0.5rem 0;
             border-bottom: 1px solid var(--text-light);
+            flex-wrap: wrap;
         }
 
         .info-row:last-child {
@@ -777,7 +870,6 @@
             justify-content: center;
         }
 
-        /* ============ Loading Overlay ============ */
         .loading-overlay {
             position: fixed;
             top: 0;
@@ -805,7 +897,6 @@
             animation: spin 1s linear infinite;
         }
 
-        /* ============ Toast Container ============ */
         .toast-container {
             position: fixed;
             bottom: 20px;
@@ -841,62 +932,18 @@
             background: var(--info);
         }
 
-        /* ============ Modal ============ */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            animation: fadeIn 0.3s ease;
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
         }
 
-        .modal-content {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            width: 90%;
-            max-width: 500px;
-            animation: slideInUp 0.3s ease;
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
         }
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-header h3 {
-            color: var(--primary-color);
-            font-size: 1.25rem;
-        }
-
-        .close-btn {
-            background: var(--bg-accent);
-            color: var(--text-secondary);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--transition-fast);
-        }
-
-        .close-btn:hover {
-            background: var(--error);
-            color: white;
-            transform: rotate(90deg);
-        }
-
-        /* ============ Animations ============ */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -956,7 +1003,6 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* ============ Responsive Design ============ */
         @media (max-width: 768px) {
             .hero {
                 grid-template-columns: 1fr;
@@ -1000,6 +1046,10 @@
             .student-details {
                 justify-content: center;
             }
+            
+            .exam-navigation {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1035,27 +1085,32 @@
     </style>
 </head>
 <body>
-    <!-- ============ Main App Container ============ -->
-    <div id="app">
-        <!-- المحتوى سيتم عرضه هنا ديناميكياً -->
-    </div>
-
-    <!-- ============ Loading Overlay ============ -->
+    <div id="app"></div>
     <div id="loadingOverlay" class="loading-overlay">
         <div class="loading-spinner"></div>
     </div>
-
-    <!-- ============ Toast Container ============ -->
     <div id="toastContainer" class="toast-container"></div>
 
     <script>
-        // ============ JavaScript Application ============
-        
         // ============ Data Management ============
         function initData() {
             if (!localStorage.getItem('azhar_students')) {
-                localStorage.setItem('azhar_students', JSON.stringify([]));
+                const defaultStudents = [
+                    {
+                        studentCode: "AZ-K0EM7X",
+                        fullName: "عبدالرحمن عادل أحمد المقدم",
+                        phone: "01000000000",
+                        governorate: "الشرقية",
+                        azharRegion: "منطقة الشرقية الأزهرية",
+                        institute: "معهد الحمد النموذجي الاعدادي الثانوي عربي بنين بمشتول السوق",
+                        grade: "first_secondary",
+                        password: "ADELAHMED_80903$",
+                        registrationDate: "2024-01-01T00:00:00.000Z"
+                    }
+                ];
+                localStorage.setItem('azhar_students', JSON.stringify(defaultStudents));
             }
+            
             if (!localStorage.getItem('azhar_session')) {
                 localStorage.setItem('azhar_session', JSON.stringify(null));
             }
@@ -1086,17 +1141,6 @@
             students.push(studentData);
             saveStudents(students);
             return studentData;
-        }
-
-        function updateStudentData(code, updatedData) {
-            const students = getStudents();
-            const index = students.findIndex(s => s.studentCode === code);
-            if (index !== -1) {
-                students[index] = { ...students[index], ...updatedData };
-                saveStudents(students);
-                return students[index];
-            }
-            return null;
         }
 
         function generateStudentCode() {
@@ -1147,68 +1191,24 @@
             return grades[gradeCode] || gradeCode;
         }
 
-        const competitionsData = {
-            'first_secondary': [
-                { title: 'مسابقة حفظ القرآن الكريم', description: 'مسابقة في حفظ وتلاوة القرآن الكريم' },
-                { title: 'مسابقة الفقه', description: 'مسابقة في مادة الفقه' }
-            ],
-            'second_secondary': [
-                { title: 'مسابقة النحو', description: 'مسابقة في علم النحو' },
-                { title: 'مسابقة الحديث', description: 'مسابقة في حفظ الأحاديث النبوية' }
-            ],
-            'third_secondary': [
-                { title: 'مسابقة البلاغة', description: 'مسابقة في علم البلاغة' },
-                { title: 'مسابقة التفسير', description: 'مسابقة في تفسير القرآن الكريم' }
-            ]
-        };
-
-        const examsData = {
-            'first_secondary': [
-                { title: 'امتحان التوحيد - الفصل الأول', description: 'امتحان تجريبي في مادة التوحيد' },
-                { title: 'امتحان التفسير - الفصل الأول', description: 'امتحان تجريبي في مادة التفسير' }
-            ],
-            'second_secondary': [
-                { title: 'امتحان الفقه - الفصل الثاني', description: 'امتحان تجريبي في مادة الفقه' },
-                { title: 'امتحان النحو - الفصل الثاني', description: 'امتحان تجريبي في مادة النحو' }
-            ],
-            'third_secondary': [
-                { title: 'امتحان الحديث - الفصل الثاني', description: 'امتحان تجريبي في مادة الحديث' },
-                { title: 'امتحان البلاغة - الفصل الثاني', description: 'امتحان تجريبي في مادة البلاغة' }
-            ]
-        };
-
-        function getCompetitionsByGrade(grade) {
-            return competitionsData[grade] || [];
-        }
-
-        function getExamsByGrade(grade) {
-            return examsData[grade] || [];
-        }
-
         // ============ Utility Functions ============
         function showLoading() {
-            const overlay = document.getElementById('loadingOverlay');
-            if (overlay) overlay.classList.add('active');
+            document.getElementById('loadingOverlay').classList.add('active');
         }
 
         function hideLoading() {
-            const overlay = document.getElementById('loadingOverlay');
-            if (overlay) overlay.classList.remove('active');
+            document.getElementById('loadingOverlay').classList.remove('active');
         }
 
         function showToast(message, type = 'info') {
             const container = document.getElementById('toastContainer');
-            if (!container) return;
-            
             const toast = document.createElement('div');
             toast.className = `toast toast-${type}`;
             toast.innerHTML = `
                 <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
                 <span>${message}</span>
             `;
-            
             container.appendChild(toast);
-            
             setTimeout(() => {
                 toast.style.opacity = '0';
                 toast.style.transform = 'translateX(100px)';
@@ -1244,22 +1244,18 @@
         function checkAuth() {
             const session = getSession();
             if (!session) return null;
-            
             const student = findStudentByCode(session.studentCode);
             if (!student) {
                 clearSession();
                 return null;
             }
-            
             return student;
         }
 
         function logout() {
             clearSession();
             showToast('تم تسجيل الخروج بنجاح', 'success');
-            setTimeout(() => {
-                showHomePage();
-            }, 1000);
+            setTimeout(() => showHomePage(), 1000);
         }
 
         // ============ Page Renderers ============
@@ -1268,7 +1264,6 @@
             const theme = document.documentElement.getAttribute('data-theme');
             
             app.innerHTML = `
-                <!-- Header -->
                 <header class="header">
                     <nav class="nav-container">
                         <div class="logo" onclick="showHomePage()">
@@ -1276,6 +1271,10 @@
                             <span>معًا نتعلم الأزهرية</span>
                         </div>
                         <div class="nav-actions">
+                            <button class="btn btn-outline" onclick="showResultsPage()">
+                                <i class="fas fa-chart-bar"></i>
+                                النتائج
+                            </button>
                             <button class="btn btn-outline" onclick="showLoginPage()">
                                 <i class="fas fa-sign-in-alt"></i>
                                 تسجيل الدخول
@@ -1291,7 +1290,6 @@
                     </nav>
                 </header>
 
-                <!-- Hero Section -->
                 <section class="hero">
                     <div class="hero-content">
                         <h1 class="hero-title">مرحبًا بكم في مبادرة</h1>
@@ -1311,10 +1309,11 @@
                             </button>
                         </div>
                     </div>
-                    <img src="Al-Azhar_al-Sharif_logo.png" alt="مسجد" style="max-width: 100%; height: auto; border-radius: 20px;">
+                    <div class="hero-image">
+    <img src="Al-Azhar_al-Sharif_logo.png" alt="مبادرة معًا نتعلم الأزهرية" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+</div>
                 </section>
 
-                <!-- Features Section -->
                 <section class="features">
                     <div class="section-header">
                         <h2>لماذا منصتنا؟</h2>
@@ -1322,30 +1321,23 @@
                     </div>
                     <div class="features-grid">
                         <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-id-card"></i>
-                            </div>
+                            <div class="feature-icon"><i class="fas fa-id-card"></i></div>
                             <h3>كود طالب فريد</h3>
                             <p>كل طالب يحصل على كود خاص وفريد يستخدمه للدخول إلى المنصة والمشاركة في المسابقات</p>
                         </div>
                         <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
+                            <div class="feature-icon"><i class="fas fa-trophy"></i></div>
                             <h3>مسابقات تفاعلية</h3>
                             <p>مسابقات مخصصة لكل صف دراسي تساعدك على تحسين مستواك التعليمي</p>
                         </div>
                         <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>تتبع التقدم</h3>
-                            <p>تابع تقدمك ونتائجك في المسابقات والامتحانات بشكل مستمر</p>
+                            <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+                            <h3>امتحانات مقالية</h3>
+                            <p>امتحانات مقالية شاملة لقياس مستوى الطلاب في المواد المختلفة</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Available Grades Section -->
                 <section class="grades-section">
                     <div class="section-header">
                         <h2>الصفوف الدراسية المتاحة</h2>
@@ -1356,25 +1348,19 @@
                             <div class="grade-icon">📚</div>
                             <h3>الصف الأول الثانوي</h3>
                             <p>الأزهري</p>
-                            <button class="btn btn-primary" onclick="showRegisterPage()">
-                                سجل الآن
-                            </button>
+                            <button class="btn btn-primary" onclick="showRegisterPage()">سجل الآن</button>
                         </div>
                         <div class="grade-card">
                             <div class="grade-icon">📖</div>
                             <h3>الصف الثاني الثانوي</h3>
                             <p>الأزهري</p>
-                            <button class="btn btn-primary" onclick="showRegisterPage()">
-                                سجل الآن
-                            </button>
+                            <button class="btn btn-primary" onclick="showRegisterPage()">سجل الآن</button>
                         </div>
                         <div class="grade-card">
                             <div class="grade-icon">🎓</div>
                             <h3>الصف الثالث الثانوي</h3>
                             <p>الأزهري</p>
-                            <button class="btn btn-primary" onclick="showRegisterPage()">
-                                سجل الآن
-                            </button>
+                            <button class="btn btn-primary" onclick="showRegisterPage()">سجل الآن</button>
                         </div>
                     </div>
                 </section>
@@ -1383,7 +1369,6 @@
 
         function showRegisterPage() {
             const app = document.getElementById('app');
-            const theme = document.documentElement.getAttribute('data-theme');
             
             app.innerHTML = `
                 <div class="auth-page">
@@ -1399,27 +1384,18 @@
 
                             <form id="registerForm" class="auth-form" onsubmit="handleRegistration(event)">
                                 <div class="form-group">
-                                    <label for="fullName">
-                                        <i class="fas fa-user"></i>
-                                        الاسم بالكامل
-                                    </label>
+                                    <label><i class="fas fa-user"></i> الاسم بالكامل</label>
                                     <input type="text" id="fullName" required placeholder="أدخل اسمك بالكامل">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="phone">
-                                        <i class="fas fa-phone"></i>
-                                        رقم الهاتف
-                                    </label>
+                                    <label><i class="fas fa-phone"></i> رقم الهاتف</label>
                                     <input type="tel" id="phone" required placeholder="01xxxxxxxxx">
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="governorate">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            المحافظة
-                                        </label>
+                                        <label><i class="fas fa-map-marker-alt"></i> المحافظة</label>
                                         <select id="governorate" required>
                                             <option value="">اختر المحافظة</option>
                                             <option value="القاهرة">القاهرة</option>
@@ -1453,27 +1429,18 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="azharRegion">
-                                            <i class="fas fa-building"></i>
-                                            المنطقة الأزهرية
-                                        </label>
+                                        <label><i class="fas fa-building"></i> المنطقة الأزهرية</label>
                                         <input type="text" id="azharRegion" required placeholder="مثال: منطقة الشرقية الأزهرية">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="institute">
-                                        <i class="fas fa-school"></i>
-                                        اسم المعهد
-                                    </label>
+                                    <label><i class="fas fa-school"></i> اسم المعهد</label>
                                     <input type="text" id="institute" required placeholder="مثال: معهد الزقازيق الثانوي">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="grade">
-                                        <i class="fas fa-graduation-cap"></i>
-                                        الصف الدراسي
-                                    </label>
+                                    <label><i class="fas fa-graduation-cap"></i> الصف الدراسي</label>
                                     <select id="grade" required>
                                         <option value="">اختر الصف الدراسي</option>
                                         <option value="first_secondary">الصف الأول الثانوي الأزهري</option>
@@ -1484,18 +1451,12 @@
 
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label for="password">
-                                            <i class="fas fa-lock"></i>
-                                            كلمة المرور
-                                        </label>
+                                        <label><i class="fas fa-lock"></i> كلمة المرور</label>
                                         <input type="password" id="password" required placeholder="أدخل كلمة المرور" minlength="6">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="confirmPassword">
-                                            <i class="fas fa-check-circle"></i>
-                                            تأكيد كلمة المرور
-                                        </label>
+                                        <label><i class="fas fa-check-circle"></i> تأكيد كلمة المرور</label>
                                         <input type="password" id="confirmPassword" required placeholder="أعد إدخال كلمة المرور" minlength="6">
                                     </div>
                                 </div>
@@ -1532,18 +1493,12 @@
 
                             <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
                                 <div class="form-group">
-                                    <label for="studentCode">
-                                        <i class="fas fa-id-card"></i>
-                                        كود الطالب
-                                    </label>
+                                    <label><i class="fas fa-id-card"></i> كود الطالب</label>
                                     <input type="text" id="studentCode" required placeholder="أدخل كود الطالب الخاص بك">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">
-                                        <i class="fas fa-lock"></i>
-                                        كلمة المرور
-                                    </label>
+                                    <label><i class="fas fa-lock"></i> كلمة المرور</label>
                                     <input type="password" id="password" required placeholder="أدخل كلمة المرور">
                                 </div>
 
@@ -1585,7 +1540,6 @@
                 </header>
 
                 <div class="dashboard-container">
-                    <!-- Welcome Section -->
                     <div class="welcome-card">
                         <div class="student-avatar">
                             <span>${student.fullName.charAt(0)}</span>
@@ -1605,72 +1559,507 @@
                         </div>
                     </div>
 
-                    <!-- Dashboard Cards -->
                     <div class="dashboard-grid">
-                        <div class="dashboard-card" onclick="showCompetitions()">
-                            <div class="card-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3>المسابقات</h3>
-                            <p>المسابقات المتاحة لك</p>
-                            <span class="card-arrow">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                        </div>
-
-                        <div class="dashboard-card" onclick="showExams()">
-                            <div class="card-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
+                        <div class="dashboard-card" onclick="showExamStartPage()">
+                            <div class="card-icon"><i class="fas fa-file-alt"></i></div>
                             <h3>الامتحانات</h3>
-                            <p>الامتحانات المتاحة لك</p>
-                            <span class="card-arrow">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
+                            <p>الامتحان الأول - النحو</p>
+                            <span class="card-arrow"><i class="fas fa-chevron-left"></i></span>
                         </div>
 
-                        <div class="dashboard-card" onclick="showAccountData()">
-                            <div class="card-icon">
-                                <i class="fas fa-user"></i>
-                            </div>
+                        <div class="dashboard-card" onclick="showResultsPage()">
+                            <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                            <h3>النتائج</h3>
+                            <p>عرض نتائج الامتحانات</p>
+                            <span class="card-arrow"><i class="fas fa-chevron-left"></i></span>
+                        </div>
+
+                        <div class="dashboard-card" onclick="showAccountData(student)">
+                            <div class="card-icon"><i class="fas fa-user"></i></div>
                             <h3>بيانات الحساب</h3>
                             <p>عرض بياناتك</p>
-                            <span class="card-arrow">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Content Sections -->
-                    <div id="competitionsSection" class="content-section" style="display: none;">
-                        <div class="section-header">
-                            <h2>🏆 المسابقات المتاحة لك</h2>
-                        </div>
-                        <div id="competitionsList" class="items-list"></div>
-                    </div>
-
-                    <div id="examsSection" class="content-section" style="display: none;">
-                        <div class="section-header">
-                            <h2>📝 الامتحانات المتاحة لك</h2>
-                        </div>
-                        <div id="examsList" class="items-list"></div>
-                    </div>
-
-                    <div id="accountSection" class="content-section" style="display: none;">
-                        <div class="section-header">
-                            <h2>👤 بيانات الحساب</h2>
-                        </div>
-                        <div class="account-details">
-                            <div id="accountInfo"></div>
+                            <span class="card-arrow"><i class="fas fa-chevron-left"></i></span>
                         </div>
                     </div>
                 </div>
             `;
+        }
+
+        function showExamStartPage() {
+            const student = checkAuth();
+            if (!student) {
+                showLoginPage();
+                return;
+            }
             
-            // Load data
-            loadCompetitions(student.grade);
-            loadExams(student.grade);
-            loadAccountData(student);
+            const app = document.getElementById('app');
+            
+            app.innerHTML = `
+                <header class="header">
+                    <nav class="nav-container">
+                        <div class="logo" onclick="showDashboardPage(checkAuth())">
+                            <i class="fas fa-mosque"></i>
+                            <span>معًا نتعلم الأزهرية</span>
+                        </div>
+                        <div class="nav-actions">
+                            <button class="btn btn-outline" onclick="showDashboardPage(checkAuth())">
+                                <i class="fas fa-arrow-right"></i>
+                                رجوع
+                            </button>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="exam-container">
+                    <div class="exam-header">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📝</div>
+                        <h2 class="exam-title">اختبار النحو – الصف الأول الثانوي الأزهري</h2>
+                        <p style="color: var(--text-secondary); margin: 1rem 0;">الموسم الأول 2026 / 2027</p>
+                        <div class="exam-info">
+                            <div class="exam-info-item">
+                                <label>اسم الطالب</label>
+                                <span>${student.fullName}</span>
+                            </div>
+                            <div class="exam-info-item">
+                                <label>كود الطالب</label>
+                                <span>${student.studentCode}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auth-card">
+                        <form onsubmit="startExam(event)">
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> اسم الطالب</label>
+                                <input type="text" id="examStudentName" required value="${student.fullName}">
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-id-card"></i> كود الطالب</label>
+                                <input type="text" id="examStudentCode" required value="${student.studentCode}">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                <i class="fas fa-play"></i>
+                                بدء الامتحان
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+
+        const examQuestions = [
+            { id: 1, question: 'مما تتكون الكلمة؟' },
+            { id: 2, question: 'ما أنواع الكلمة؟' },
+            { id: 3, question: 'ما أنواع الجر؟' },
+            { id: 4, question: 'ما هي علامات الفعل؟' },
+            { id: 5, question: 'مما ينقسم الحرف؟' }
+        ];
+
+        let currentQuestion = 0;
+        let examAnswers = [];
+        let examTimer;
+        let examTimeLeft = 1800;
+
+        function startExam(event) {
+            event.preventDefault();
+            
+            const studentName = document.getElementById('examStudentName').value.trim();
+            const studentCode = document.getElementById('examStudentCode').value.trim();
+            
+            if (!studentName || !studentCode) {
+                showToast('يرجى إدخال اسم الطالب وكود الطالب', 'error');
+                return;
+            }
+            
+            const student = checkAuth();
+            if (!student) {
+                showLoginPage();
+                return;
+            }
+            
+            if (student.studentCode !== studentCode.toUpperCase()) {
+                showToast('كود الطالب غير صحيح', 'error');
+                return;
+            }
+            
+            currentQuestion = 0;
+            examAnswers = Array(examQuestions.length).fill('');
+            examTimeLeft = 1800;
+            
+            showExamPage(student);
+            startTimer();
+        }
+
+        function showExamPage(student) {
+            const app = document.getElementById('app');
+            
+            app.innerHTML = `
+                <header class="header">
+                    <nav class="nav-container">
+                        <div class="logo">
+                            <i class="fas fa-mosque"></i>
+                            <span>معًا نتعلم الأزهرية</span>
+                        </div>
+                        <div class="nav-actions">
+                            <span class="badge">${student.fullName}</span>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="exam-container">
+                    <div class="exam-header">
+                        <h2 style="color: var(--primary-color);">اختبار النحو</h2>
+                        <p>الصف الأول الثانوي الأزهري - الموسم الأول 2026/2027</p>
+                        <div class="timer" id="examTimer">30:00</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width: 20%;"></div>
+                        </div>
+                        <p id="progressText">السؤال 1 من ${examQuestions.length}</p>
+                    </div>
+
+                    <div id="questionsContainer">
+                        ${examQuestions.map((q, index) => `
+                            <div class="question-card ${index === 0 ? 'active' : ''}" id="question-${index}">
+                                <div class="question-number">سؤال ${index + 1}</div>
+                                <div class="question-text">${q.question}</div>
+                                <textarea class="answer-textarea" id="answer-${index}" placeholder="اكتب إجابتك هنا..." oninput="saveAnswer(${index}, this.value)"></textarea>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="exam-navigation">
+                        <button class="btn btn-outline" id="prevBtn" onclick="previousQuestion()" disabled>
+                            <i class="fas fa-arrow-right"></i>
+                            السؤال السابق
+                        </button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">
+                            السؤال التالي
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="btn btn-danger" onclick="submitExam()">
+                            <i class="fas fa-check"></i>
+                            تسليم الامتحان
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function saveAnswer(index, value) {
+            examAnswers[index] = value;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < examQuestions.length - 1) {
+                currentQuestion++;
+                updateQuestionDisplay();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                updateQuestionDisplay();
+            }
+        }
+
+        function updateQuestionDisplay() {
+            const questions = document.querySelectorAll('.question-card');
+            questions.forEach((q, index) => {
+                q.classList.remove('active');
+                if (index === currentQuestion) {
+                    q.classList.add('active');
+                }
+            });
+            
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').style.display = currentQuestion === examQuestions.length - 1 ? 'none' : 'inline-flex';
+            
+            const progress = ((currentQuestion + 1) / examQuestions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `السؤال ${currentQuestion + 1} من ${examQuestions.length}`;
+        }
+
+        function startTimer() {
+            clearInterval(examTimer);
+            examTimer = setInterval(() => {
+                examTimeLeft--;
+                
+                const minutes = Math.floor(examTimeLeft / 60);
+                const seconds = examTimeLeft % 60;
+                const timerElement = document.getElementById('examTimer');
+                
+                if (timerElement) {
+                    timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    if (examTimeLeft <= 300) {
+                        timerElement.style.color = '#f44336';
+                    }
+                }
+                
+                if (examTimeLeft <= 0) {
+                    clearInterval(examTimer);
+                    submitExam();
+                }
+            }, 1000);
+        }
+
+        function submitExam() {
+            if (confirm('هل أنت متأكد من تسليم الامتحان؟ لن تستطيع تعديل إجاباتك بعد التسليم.')) {
+                clearInterval(examTimer);
+                
+                const student = checkAuth();
+                if (!student) return;
+                
+                showExamSuccessPage(student);
+            }
+        }
+
+        function showExamSuccessPage(student) {
+            const app = document.getElementById('app');
+            
+            app.innerHTML = `
+                <div class="success-page">
+                    <div class="success-card">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        
+                        <h1 class="success-title">تم تسليم الامتحان بنجاح</h1>
+                        
+                        <div class="student-info-summary">
+                            <div class="info-row">
+                                <span class="info-label">اسم الطالب:</span>
+                                <span class="info-value">${student.fullName}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">كود الطالب:</span>
+                                <span class="info-value">${student.studentCode}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">الصف الدراسي:</span>
+                                <span class="info-value">${getGradeName(student.grade)}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">المادة:</span>
+                                <span class="info-value">النحو</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">الموسم:</span>
+                                <span class="info-value">الموسم الأول 2026/2027</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">عدد الأسئلة:</span>
+                                <span class="info-value">5 أسئلة</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">حالة الامتحان:</span>
+                                <span class="info-value" style="color: #4caf50;">تم تسليم الامتحان بنجاح</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">وقت التسليم:</span>
+                                <span class="info-value">${new Date().toLocaleString('ar-EG')}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-message">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>ملاحظة:</strong> استنى لحد ما النتيجة تظهر في صفحة النتائج
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-primary btn-lg" onclick="showResultsPage()">
+                                <i class="fas fa-chart-bar"></i>
+                                الذهاب لصفحة النتائج
+                            </button>
+                            <button class="btn btn-outline btn-lg" onclick="showDashboardPage(checkAuth())">
+                                <i class="fas fa-home"></i>
+                                العودة للوحة التحكم
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showResultsPage() {
+            const app = document.getElementById('app');
+            const theme = document.documentElement.getAttribute('data-theme');
+            
+            app.innerHTML = `
+                <header class="header">
+                    <nav class="nav-container">
+                        <div class="logo" onclick="showHomePage()">
+                            <i class="fas fa-mosque"></i>
+                            <span>معًا نتعلم الأزهرية</span>
+                        </div>
+                        <div class="nav-actions">
+                            <button class="btn btn-outline" onclick="showHomePage()">
+                                <i class="fas fa-home"></i>
+                                الرئيسية
+                            </button>
+                            <button class="theme-toggle" onclick="toggleTheme()">
+                                <i class="fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'}"></i>
+                            </button>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="results-container">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h2>صفحة النتائج</h2>
+                            <p>ابحث عن نتيجتك باستخدام كود الطالب</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fas fa-search"></i> كود الطالب</label>
+                            <input type="text" id="searchCode" placeholder="أدخل كود الطالب للبحث عن النتيجة">
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-lg" onclick="searchResult()">
+                            <i class="fas fa-search"></i>
+                            بحث
+                        </button>
+
+                        <div id="resultDisplay" style="margin-top: 2rem;"></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function searchResult() {
+            const code = document.getElementById('searchCode').value.trim().toUpperCase();
+            
+            if (!code) {
+                showToast('يرجى إدخال كود الطالب', 'error');
+                return;
+            }
+            
+            const resultDisplay = document.getElementById('resultDisplay');
+            const student = findStudentByCode(code);
+            
+            if (student) {
+                resultDisplay.innerHTML = `
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">نتيجة الامتحان</h3>
+                        
+                        <div class="student-info-summary" style="text-align: right;">
+                            <div class="info-row">
+                                <span class="info-label">اسم الطالب:</span>
+                                <span class="info-value">${student.fullName}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">كود الطالب:</span>
+                                <span class="info-value">${student.studentCode}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">الصف الدراسي:</span>
+                                <span class="info-value">${getGradeName(student.grade)}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">المعهد:</span>
+                                <span class="info-value">${student.institute}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">المنطقة الأزهرية:</span>
+                                <span class="info-value">${student.azharRegion}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">المادة:</span>
+                                <span class="info-value">النحو</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">الموسم:</span>
+                                <span class="info-value">الموسم الأول 2026/2027</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-score">
+                            <span>10/10</span>
+                            <i class="fas fa-star" style="color: #d4af37; font-size: 2.5rem; animation: bounce 1s ease infinite;"></i>
+                        </div>
+                        <div style="font-size: 1.5rem; color: var(--success); font-weight: bold;">
+                            ممتاز
+                            <i class="fas fa-star" style="color: #d4af37;"></i>
+                        </div>
+                    </div>
+                `;
+                
+                showToast('تم العثور على النتيجة', 'success');
+            } else {
+                resultDisplay.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-user-times"></i>
+                        <p>لا يوجد طالب مسجل بهذا الكود: ${code}</p>
+                        <p style="font-size: 0.875rem;">تأكد من الكود وحاول مرة أخرى</p>
+                    </div>
+                `;
+                
+                showToast('الكود غير موجود في النظام', 'error');
+            }
+        }
+
+        function showAccountData(student) {
+            const app = document.getElementById('app');
+            
+            app.innerHTML = `
+                <header class="header">
+                    <nav class="nav-container">
+                        <div class="logo" onclick="showDashboardPage(checkAuth())">
+                            <i class="fas fa-mosque"></i>
+                            <span>معًا نتعلم الأزهرية</span>
+                        </div>
+                        <div class="nav-actions">
+                            <button class="btn btn-outline" onclick="showDashboardPage(checkAuth())">
+                                <i class="fas fa-arrow-right"></i>
+                                رجوع
+                            </button>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="dashboard-container">
+                    <div class="section-header">
+                        <h2>👤 بيانات الحساب</h2>
+                    </div>
+                    
+                    <div class="account-details">
+                        <div class="account-field">
+                            <label>الاسم الكامل:</label>
+                            <span>${student.fullName}</span>
+                        </div>
+                        <div class="account-field">
+                            <label>كود الطالب:</label>
+                            <span>${student.studentCode}</span>
+                        </div>
+                        <div class="account-field">
+                            <label>رقم الهاتف:</label>
+                            <span>${student.phone}</span>
+                        </div>
+                        <div class="account-field">
+                            <label>المحافظة:</label>
+                            <span>${student.governorate}</span>
+                        </div>
+                        <div class="account-field">
+                            <label>المنطقة الأزهرية:</label>
+                            <span>${student.azharRegion}</span>
+                        </div>
+                        <div class="account-field">
+                            <label>المعهد:</label>
+                            <span>${student.institute}</span>
+                        </div>
+                        <div class="account-field">
+                            <label>الصف الدراسي:</label>
+                            <span>${getGradeName(student.grade)}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         function showSuccessPage(student) {
@@ -1742,7 +2131,6 @@
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
             
-            // Validation
             if (fullName.length < 3) {
                 showToast('الاسم يجب أن يكون 3 أحرف على الأقل', 'error');
                 return;
@@ -1783,19 +2171,15 @@
                 return;
             }
             
-            // Check if phone already exists
             if (findStudentByPhone(phone)) {
                 showToast('رقم الهاتف مسجل بالفعل في النظام', 'error');
                 return;
             }
             
-            // Show loading
             showLoading();
             
-            // Generate student code
             const studentCode = generateStudentCode();
             
-            // Create student data
             const studentData = {
                 studentCode: studentCode,
                 fullName: fullName,
@@ -1808,7 +2192,6 @@
                 registrationDate: new Date().toISOString()
             };
             
-            // Save student
             setTimeout(() => {
                 addStudent(studentData);
                 hideLoading();
@@ -1832,10 +2215,8 @@
                 return;
             }
             
-            // Show loading
             showLoading();
             
-            // Check login
             setTimeout(() => {
                 const student = checkLogin(studentCode, password);
                 
@@ -1857,7 +2238,6 @@
             navigator.clipboard.writeText(code).then(() => {
                 showToast('تم نسخ الكود بنجاح', 'success');
             }).catch(() => {
-                // Fallback
                 const textArea = document.createElement('textarea');
                 textArea.value = code;
                 document.body.appendChild(textArea);
@@ -1868,113 +2248,10 @@
             });
         }
 
-        // ============ Dashboard Functions ============
-        function loadCompetitions(grade) {
-            const competitions = getCompetitionsByGrade(grade);
-            const container = document.getElementById('competitionsList');
-            
-            if (container) {
-                if (competitions.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state">
-                            <i class="fas fa-trophy"></i>
-                            <p>لا توجد مسابقات متاحة حالياً</p>
-                        </div>
-                    `;
-                } else {
-                    container.innerHTML = competitions.map(comp => `
-                        <div class="item-card">
-                            <h4>${comp.title}</h4>
-                            <p>${comp.description}</p>
-                        </div>
-                    `).join('');
-                }
-            }
-        }
-
-        function loadExams(grade) {
-            const exams = getExamsByGrade(grade);
-            const container = document.getElementById('examsList');
-            
-            if (container) {
-                if (exams.length === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state">
-                            <i class="fas fa-file-alt"></i>
-                            <p>لا توجد امتحانات متاحة حالياً</p>
-                        </div>
-                    `;
-                } else {
-                    container.innerHTML = exams.map(exam => `
-                        <div class="item-card">
-                            <h4>${exam.title}</h4>
-                            <p>${exam.description}</p>
-                        </div>
-                    `).join('');
-                }
-            }
-        }
-
-        function loadAccountData(student) {
-            const container = document.getElementById('accountInfo');
-            
-            if (container) {
-                container.innerHTML = `
-                    <div class="account-field">
-                        <label>الاسم الكامل:</label>
-                        <span>${student.fullName}</span>
-                    </div>
-                    <div class="account-field">
-                        <label>كود الطالب:</label>
-                        <span>${student.studentCode}</span>
-                    </div>
-                    <div class="account-field">
-                        <label>رقم الهاتف:</label>
-                        <span>${student.phone}</span>
-                    </div>
-                    <div class="account-field">
-                        <label>المحافظة:</label>
-                        <span>${student.governorate}</span>
-                    </div>
-                    <div class="account-field">
-                        <label>المنطقة الأزهرية:</label>
-                        <span>${student.azharRegion}</span>
-                    </div>
-                    <div class="account-field">
-                        <label>المعهد:</label>
-                        <span>${student.institute}</span>
-                    </div>
-                    <div class="account-field">
-                        <label>الصف الدراسي:</label>
-                        <span>${getGradeName(student.grade)}</span>
-                    </div>
-                `;
-            }
-        }
-
-        function showCompetitions() {
-            document.getElementById('competitionsSection').style.display = 'block';
-            document.getElementById('examsSection').style.display = 'none';
-            document.getElementById('accountSection').style.display = 'none';
-        }
-
-        function showExams() {
-            document.getElementById('competitionsSection').style.display = 'none';
-            document.getElementById('examsSection').style.display = 'block';
-            document.getElementById('accountSection').style.display = 'none';
-        }
-
-        function showAccountData() {
-            document.getElementById('competitionsSection').style.display = 'none';
-            document.getElementById('examsSection').style.display = 'none';
-            document.getElementById('accountSection').style.display = 'block';
-        }
-
         // ============ Initialize App ============
         document.addEventListener('DOMContentLoaded', function() {
             loadTheme();
             
-            // Check if user is already logged in
             const session = getSession();
             if (session) {
                 const student = findStudentByCode(session.studentCode);
